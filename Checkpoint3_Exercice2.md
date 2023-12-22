@@ -6,7 +6,7 @@
 
 **Q.2.1.1** 
 
-Sur le serveur, créer un compte pour ton usage personnel. je me connecter en root via SSH de mon pc Hote et je lance la commande adduser mika et je rentre le mot de passe et les information utile
+Sur le serveur, créer un compte pour ton usage personnel. je me connecter en `root` via SSH de mon pc Hote et je lance la commande adduser mika et je rentre le mot de passe et les information utile
 
 ![1](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint.JPG?raw=true)
 
@@ -45,13 +45,13 @@ je verifie que wilder n'as plus acces en ssh avec la commande `ssh wilder@IP` ac
 
 Mettre en place une authentification par clé valide et désactiver l'authentification par mot de passe ca se passe en 2 etapes :
 
-1ere generer une paire de cle valide grace a la commande ssh-keygen puis l'envoye sur le serveur avec la commande ssh-id-copy 
+`1ere etape :` generer une paire de cle valide grace a la commande ssh-keygen puis l'envoye sur le serveur avec la commande ssh-id-copy 
 
 ![7](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint7.JPG?raw=true)
 
 ![8](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint8.JPG?raw=true)
 
-2 etape : modifier le fichier /etc/ssh/sshd_conf pour désactiver l'authentification par mot de passe et redemarre le service ssh avec la commande systemctl restart ssh
+`2 etape :` modifier le fichier /etc/ssh/sshd_conf pour désactiver l'authentification par mot de passe et redemarre le service ssh avec la commande systemctl restart ssh
 
 ![9](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint9.JPG?raw=true)
 
@@ -79,7 +79,7 @@ j'eteins ma VM, j'ajoute un disque dur de 8Go afin de reparer le raid en place.
 
 ![13](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint13.JPG?raw=true)
 
-je vais identifier le nouveau disque avec la commande lsblk, Préparer le disque avec la commande fdisk et je vais ajouter le disque au raid existant 
+je vais identifier le nouveau disque avec la commande `lsblk`, Préparer le disque avec la commande `fdisk` et je vais ajouter le disque au raid existant 
 
 ![14](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint14.JPG?raw=true)
 
@@ -87,7 +87,7 @@ je vais identifier le nouveau disque avec la commande lsblk, Préparer le disque
 
 **Q.2.3.4**
 
-je vais afficher le VG cree pour connaitre le nom du volum Group avec la commande vgs apres je vais lancer la commande lvcreate pour cree un volume group nomme backup_storage 
+je vais afficher le VG cree pour connaitre le nom du volum Group avec la commande `vgs` apres je vais lancer la commande `lvcreate` pour cree un volume group nomme backup_storage 
 
 ![17](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint17.JPG?raw=true)
 
@@ -95,12 +95,13 @@ je vais formater se volume logique
 
 ![18](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint18.JPG?raw=true)
 
-pour que se volume soit monter automatique au demarrage je vais créé un dossier mkdir /var/lib/bareos/storage et modifier le fichier fstab en ajoutant la ligne 
+pour que se volume soit monter automatique au demarrage je vais créé un dossier `mkdir /var/lib/bareos/storage` et modifier le fichier fstab en ajoutant la ligne 
 
 `/dev/cp3-vg/backup_storage /var/lib/bareos/storage ext4 defaults 0 2`
 
 **Q.2.3.5**
-gravce a la commande VGS je m'apercois qu'il me reste <1.79G
+
+gravce a la commande `vgs` je m'apercois qu'il me reste <1.79G
 
 ![19](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint19.JPG?raw=true)
 
@@ -109,11 +110,11 @@ gravce a la commande VGS je m'apercois qu'il me reste <1.79G
 
 **Q.2.4.1**
 
-bareos-dir (Director) Gère la configuration, la planification des sauvegardes, la communication avec les autres composants (bareos-sd et bareos-fd)
+`bareos-dir (Director)` : Gère la configuration, la planification des sauvegardes, la communication avec les autres composants (bareos-sd et bareos-fd)
 
-bareos-sd (Storage Daemon) Reçoit les données à sauvegarder depuis le Bareaos-fd et les stockes sur les supports de stockage configurés, puis les restaure lorsqu'elles sont nécessaires.
+`bareos-sd (Storage Daemon)` : Reçoit les données à sauvegarder depuis le Bareaos-fd et les stockes sur les supports de stockage configurés, puis les restaure lorsqu'elles sont nécessaires.
 
-bareos-fd (File Daemon) Il permet a Bareaos-dir de communiquer avec ces machines pour initier les sauvegardes, envoyer les données à sauvegarder vers le Bareos-sd
+`bareos-fd (File Daemon)` : Il permet a Bareaos-dir de communiquer avec ces machines pour initier les sauvegardes, envoyer les données à sauvegarder vers le Bareos-sd
 
 ### Partie 5 : Filtrage et analyse réseau :
 

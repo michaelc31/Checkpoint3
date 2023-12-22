@@ -87,7 +87,23 @@ je vais identifier le nouveau disque avec la commande lsblk, Préparer le disque
 
 **Q.2.3.4**
 
+je vais afficher le VG cree pour connaitre le nom du volum Group avec la commande vgs apres je vais lancer la commande lvcreate pour cree un volume group nomme backup_storage 
+
+![17](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint17.JPG?raw=true)
+
+je vais formater se volume logique 
+
+![18](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint18.JPG?raw=true)
+
+pour que se volume soit monter automatique au demarrage je vais créé un dossier mkdir /var/lib/bareos/storage et modifier le fichier fstab en ajoutant la ligne 
+
+`/dev/cp3-vg/backup_storage /var/lib/bareos/storage ext4 defaults 0 2`
+
 **Q.2.3.5**
+gravce a la commande VGS je m'apercois qu'il me reste <1.79G
+
+![19](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint19.JPG?raw=true)
+
 
 ### Partie 4 : Sauvegardes :
 
@@ -106,6 +122,7 @@ bareos-fd (File Daemon) Il permet a Bareaos-dir de communiquer avec ces machines
 les règles actuelle appliquées sur Netfilter sont :
 
 ![16](https://github.com/michaelc31/Checkpoint3/blob/main/Exo2/checkpoint16.JPG?raw=true)
+
 
 **Q.2.5.2**
 

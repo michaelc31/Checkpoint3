@@ -4,7 +4,7 @@
 
 ### Partie 1 : Gestion des utilisateurs :
 
-Q.1.1.1 :
+**Q.1.1.1 :**
 
 Pour créé mon utilisateur `Lionel Lemarchand` je vais dans l'AD user and computer. je clique sur `Action/Find` je recherche `Kelly Rhameur` afin d'afficher ses attributs. 
 
@@ -16,7 +16,7 @@ Ceci fait je sais que `Kelly Rhameur` je situe dans `l'OU LabUsers , DirectionDe
 
 ![3](https://github.com/michaelc31/Checkpoint3/blob/main/Exo1/Checkpoint3.JPG?raw=true)
 
-Q.1.1.2 :
+**Q.1.1.2 :**
 
 Pour la création de `l'ou DeactivatedUsers` je fait un clique droit sur l'OU LabUsers et je fait `new/Organizational Unit`
 je nomme mon `OU DeactivatedUsers` et je valide
@@ -28,14 +28,14 @@ je clique droit sur l'utilisateur `Kelly.Rhameur` et je le desactive et je le de
 ![5](https://github.com/michaelc31/Checkpoint3/blob/main/Exo1/Checkpoint5.JPG?raw=true)
 
 
-Q.1.1.3 :
+**Q.1.1.3 :**
 
 Connaissant les attributs de `Kelly` je sais qu'elle est dans le group `GrpUsersDirectionDesRessourcesHumaines` du coup je vais dans se groupe et je le modifie afin de verifier que notre nouvel utilisateur est bien dedans et que `Kelly` n'y est plus
 
 ![6](https://github.com/michaelc31/Checkpoint3/blob/main/Exo1/Checkpoint6.JPG?raw=true)
 
 
-Q.1.1.4 : 
+**Q.1.1.4 :** 
 
 je cherche l'emplacement des dossier personnel qui se trouve dans `DossiersIndividuels F:` et je modifie le dossier de Kelly afin qu'il passe en -ARCHIVE et je créé le dossier personnel de Lionel nommé `Lionel.Lemarchand`
 
@@ -45,7 +45,7 @@ je cherche l'emplacement des dossier personnel qui se trouve dans `DossiersIndiv
 
 ### Partie 2 : Restriction utilisateurs :
 
-Q.1.2.1 :
+**Q.1.2.1 :**
 
 Pour faire en sorte que l'utilisateur `Gabriel Ghul` ne puisse se connecter que du `lundi au vendredi, de 7h à 17h`. je vais faire ca en 2 étapes: 
 
@@ -65,13 +65,13 @@ la gpo créé pour l'appliquer faut la Link a l'OU LabComputer et c'est bon.
 
 ![11](https://github.com/michaelc31/Checkpoint3/blob/main/Exo1/Checkpoint11.JPG?raw=true)
 
-Q.1.2.2 :
+**Q.1.2.2 :**
 
 Pour bloquer sa connexion au seul ordinateur `CLIENT01`. dans le Security filtering je rajoute le computer CLIENT1
 
 ![13](https://github.com/michaelc31/Checkpoint3/blob/main/Exo1/Checkpoint13.JPG?raw=true)
 
-Q.1.2.3 :
+**Q.1.2.3 :**
 
 Pour mettre en place une stratégie de mot de passe pour durcir les comptes des utilisateurs de `l'OU LabUsers` je me dirige vers `Active Directory Administrative Center` et je vais dans `TSSR(local)/System/Password Settings Contener`
 
@@ -84,7 +84,7 @@ je fait New et je met en place ma strategie de mot de Passe
 
 ### Partie 3 : Lecteurs réseaux :
 
-Q.1.3.1 :
+**Q.1.3.1 :**
 
 Créer une GPO Drive-Mount qui monte les lecteurs E: et F: sur les clients, je vais dans Group Policy Management et je créé ma GPO nommé User_MapDrive, je regle le status GPO sur `Computer configuration settings disabled` et je l'edit pour mapper les dossier 
 
